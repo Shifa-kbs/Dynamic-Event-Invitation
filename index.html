@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic Event Invitation</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1> You're Invited </h1>
+    <p>Join us for a special event!</p>
+</header>
+
+<section class="event-type">
+    <h2>Select Event Type</h2>
+    <select id="eventType" onchange="updateEvent()">
+        <option value="general">General Event</option>
+        <option value="birthday">Birthday</option>
+        <option value="wedding">Wedding</option>
+        <option value="corporate">Corporate Event</option>
+    </select>
+</section>
+
+<h2 id="countdown"></h2>
+
+
+<section class="event-details">
+    <h2>Event Details</h2>
+    <p><b>Date:</b> 25th May 2026</p>
+    <p><b>Time:</b> 5:00 PM</p>
+    <p><b>Venue:</b> <span id="venueText">Bangalore Palace</span></p>
+</section>
+
+<section class="map">
+    <h2> Location</h2>
+    <iframe id="mapFrame"
+        src="https://www.google.com/maps?q=Bangalore Palace&output=embed"
+        width="80%" height="300" style="border:0;">
+    </iframe>
+</section>
+
+<div class="actions">
+    <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Event&dates=20260525T170000Z/20260525T190000Z" target="_blank">
+        <button> Add to Calendar</button>
+    </a>
+
+    <button onclick="window.print()"> Download Invitation</button>
+</div>
+
+
+<section class="form-section">
+    <h2>RSVP</h2>
+    
+    <form action="rsvp.php" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        
+        <input type="email" name="email" placeholder="Your Email" required>
+
+        <select name="attending">
+            <option value="Yes">Yes, I will attend</option>
+            <option value="No">Sorry, I can't attend</option>
+        </select>
+
+        <button type="submit">Submit</button>
+    </form>
+</section>
+
+<footer>
+    <p>Made with love for all kinds of events</p>
+</footer>
+
+<script>
+function updateEvent() {
+    let type = document.getElementById("eventType").value;
+
+    let title = document.querySelector("header h1");
+    let desc = document.querySelector("header p");
+    let venue = document.getElementById("venueText");
+    let map = document.getElementById("mapFrame");
+
+    if(type === "birthday") {
+        title.innerHTML = " Birthday Celebration ";
+        desc.innerHTML = "Join us to celebrate a special day!";
+        document.body.style.background = "url('https://images.unsplash.com/photo-1464349153735-7db50ed83c84') no-repeat center/cover";
+
+        venue.innerHTML = "Party Hall, Indiranagar, Bangalore";
+        map.src = "https://www.google.com/maps?q=Indiranagar Bangalore&output=embed";
+    }
+    else if(type === "wedding") {
+        title.innerHTML = " Wedding Invitation ";
+        desc.innerHTML = "Together with their families, they invite you!";
+        document.body.style.background = "url('https://images.unsplash.com/photo-1522673607200-164d1b6ce486') no-repeat center/cover";
+
+        venue.innerHTML = "Leela Palace, Bangalore";
+        map.src = "https://www.google.com/maps?q=Leela Palace Bangalore&output=embed";
+    }
+    else if(type === "corporate") {
+        title.innerHTML = "Corporate Event ";
+        desc.innerHTML = "Join us for a professional gathering!";
+        document.body.style.background = "url('https://images.unsplash.com/photo-1505373877841-8d25f7d46678') no-repeat center/cover";
+
+        venue.innerHTML = "Manyata Tech Park, Bangalore";
+        map.src = "https://www.google.com/maps?q=Manyata Tech Park Bangalore&output=embed";
+    }
+    else {
+        title.innerHTML = " You're Invited ";
+        desc.innerHTML = "Join us for a special event!";
+        document.body.style.background = "url('https://images.unsplash.com/photo-1492684223066-81342ee5ff30') no-repeat center/cover";
+
+        venue.innerHTML = "Bangalore Palace";
+        map.src = "https://www.google.com/maps?q=Bangalore Palace&output=embed";
+    }
+}
+
+let eventDate = new Date("May 25, 2026 17:00:00").getTime();
+
+setInterval(function() {
+    let now = new Date().getTime();
+    let distance = eventDate - now;
+
+    let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    
+    document.getElementById("countdown").innerHTML =
+        " Event starts in " + days + " days";
+}, 1000);
+
+</script>
+
+</body>
+</html>
