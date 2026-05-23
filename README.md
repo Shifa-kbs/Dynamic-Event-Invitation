@@ -1,15 +1,12 @@
 # Dynamic-Event-Invitation
-Got you 👍 — here’s a **clean, simple, professional README.md content** (not too long, not too short) that you can directly paste 💯
 
----
-
-# 📌 **Dynamic Event Invitation Website**
+## **Dynamic Event Invitation Website**
 
 A simple and dynamic event invitation website built using HTML, CSS, and PHP. It allows users to create invitations for different event types and collect RSVP responses.
 
 ---
 
-## 🚀 **Features**
+## **Features**
 
 * Supports multiple event types (Birthday, Wedding, Corporate)
 * Dynamic update of event details and background
@@ -19,7 +16,7 @@ A simple and dynamic event invitation website built using HTML, CSS, and PHP. It
 
 ---
 
-## 🛠️ **Technologies Used**
+## **Technologies Used**
 
 * HTML – Structure
 * CSS – Styling
@@ -27,8 +24,7 @@ A simple and dynamic event invitation website built using HTML, CSS, and PHP. It
 
 ---
 
-## ⚙️ **How to Run**
-
+## **How to Run**
 1. Install XAMPP
 2. Place project folder inside `htdocs`
 3. Start Apache server
@@ -40,13 +36,13 @@ A simple and dynamic event invitation website built using HTML, CSS, and PHP. It
 
 ---
 
-## 📊 **Project Purpose**
+## **Project Purpose**
 
 This project is developed to provide a reusable and simple solution for creating digital event invitations instead of using traditional methods.
 
 ---
 
-## 🔮 **Future Improvements**
+## **Future Improvements**
 
 * Database integration
 * Admin panel
@@ -55,13 +51,13 @@ This project is developed to provide a reusable and simple solution for creating
 
 ---
 
-## 👩‍💻 **Author**
+## **Author**
 
 B KHALANDAR BEEBI SHIFA
 
 ---
 
-# 🎯 RESULT
+# RESULT
 
 ✔ Clean & professional
 
